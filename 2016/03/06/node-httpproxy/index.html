@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>node.js to implement httpproxy | Zachary&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Let’s say something about http proxy.
+DemandWhen I have username and password to simulate a login action on a website, how can I pass the verification algorithm or validation routines, sometimes this">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node.js to implement httpproxy">
+<meta property="og:url" content="http://yoursite.com/2016/03/06/node-httpproxy/index.html">
+<meta property="og:site_name" content="Zachary's blog">
+<meta property="og:description" content="Let’s say something about http proxy.
+DemandWhen I have username and password to simulate a login action on a website, how can I pass the verification algorithm or validation routines, sometimes this">
+<meta property="og:updated_time" content="2016-03-06T15:58:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="node.js to implement httpproxy">
+<meta name="twitter:description" content="Let’s say something about http proxy.
+DemandWhen I have username and password to simulate a login action on a website, how can I pass the verification algorithm or validation routines, sometimes this">
+  
+    <link rel="alternative" href="/atom.xml" title="Zachary&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Zachary&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">no pain no gain</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-node-httpproxy" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/06/node-httpproxy/" class="article-date">
+  <time datetime="2016-03-06T14:23:11.000Z" itemprop="datePublished">2016-03-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/front-end/">front-end</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      node.js to implement httpproxy
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Let’s say something about http proxy.</p>
+<h2 id="Demand"><a href="#Demand" class="headerlink" title="Demand"></a>Demand</h2><p>When I have username and password to simulate a login action on a website, how can I pass the verification algorithm or validation routines, sometimes this kind of program is really complicated which is the biggest obstacle to hack in. For instance, when you have plenty <a href="https://login.m.taobao.com/login.htm" target="_blank" rel="external">taobao</a> usename and password how can you figure out what the customer bought, as this b2c mogul uses an algorithm to check all http resquest if they are legal.</p>
+<h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><p>We need that signature program to disguise our http request.</p>
+<p>before we dig it out from the website we really need a workstation to do some expriments as a handy tool may save us loads of time. The longer answer is that we could use http proxy to falsify a normal http request and verify our speculation.</p>
+<h2 id="Tools-amp-Implementation"><a href="#Tools-amp-Implementation" class="headerlink" title="Tools &amp; Implementation"></a>Tools &amp; Implementation</h2><p>Chrome<br>SwitchyOmega chrome plugin<br><a href="https://github.com/jrburke/requirejs" target="_blank" rel="external">requirejs</a>.</p>
+<p>With switchyOmega we can get a proxy server interface locally, use 127.0.0.1 and a specific port, let’s say 8000.</p>
+<p>Now all the requests will pass through this port before rendered by the brower.</p>
+<p>Download requirejs, we need it to load our js in local.</p>
+<p>What we need then is to run a http server instance to do our own secret business, it is time to shine a spotlight on the nodejs server and some scripts. </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line">*	proxy.js</span><br><span class="line">**/</span></span><br><span class="line"><span class="keyword">var</span> sys = <span class="built_in">require</span>(<span class="string">"sys"</span>);</span><br><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="comment">/**</span><br><span class="line"> *  User defined module containing the special handlers</span><br><span class="line"> **/</span></span><br><span class="line"><span class="keyword">var</span> special_handler = <span class="built_in">require</span>(<span class="string">"./handlers"</span>);</span><br><span class="line"><span class="comment">// var special_handler = require("C:/Users/pc/Desktop/handlers");</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> *  ignore common connection errors like broken pipes.</span><br><span class="line"> **/</span></span><br><span class="line">process.on(<span class="string">'uncaughtException'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> *  Default handler. Proxy the requests that don't match the patterns</span><br><span class="line"> **/</span></span><br><span class="line"><span class="keyword">var</span> proxy_handler = <span class="function"><span class="keyword">function</span>(<span class="params">response, data</span>) </span>&#123;</span><br><span class="line">    response.write(data, <span class="string">'binary'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> *  This is the Request Handler function for the server.</span><br><span class="line"> **/</span></span><br><span class="line"><span class="keyword">var</span> requestHandler = <span class="function"><span class="keyword">function</span>(<span class="params">clientRequest, clientResponse</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    sys.puts(<span class="string">"Request: "</span> + clientRequest.url);</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(clientRequest.url.indexOf(<span class="string">'lib-yocto'</span>)&gt;<span class="number">0</span>)&#123;</span><br><span class="line">		fs.readFile(<span class="string">'./taobaof.js'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">			<span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</span><br><span class="line">			<span class="built_in">console</span>.log(<span class="string">'just here\n\n\n\n\n\n'</span>);</span><br><span class="line">			clientResponse.setHeader(<span class="string">'content-type'</span>,<span class="string">'application/x-javascript'</span>);</span><br><span class="line">			clientResponse.write(data);</span><br><span class="line">			clientResponse.end();</span><br><span class="line">		&#125;);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Create the client */</span></span><br><span class="line">    <span class="keyword">var</span> proxy = http.createClient(<span class="number">80</span>, clientRequest.headers[<span class="string">'host'</span>])</span><br><span class="line">    <span class="comment">/* Do the request */</span></span><br><span class="line">    <span class="keyword">var</span> client = proxy.request(clientRequest.method, clientRequest.url, clientRequest.headers);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Hanlde on response event */</span></span><br><span class="line">    client.on(<span class="string">"response"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">response</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">        sys.puts(<span class="string">"Status Code: "</span> + response.statusCode);</span><br><span class="line"></span><br><span class="line">        clientResponse.writeHeader(response.statusCode, response.headers);</span><br><span class="line"></span><br><span class="line">        <span class="comment">/* By Default the handler is proxy_handler */</span></span><br><span class="line">        handler = proxy_handler;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span><br><span class="line">         * Process the user defined patterns and handlers</span><br><span class="line">         * */</span></span><br><span class="line">        <span class="keyword">for</span> (hand <span class="keyword">in</span> special_handler.handlers) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (clientRequest.url.search(special_handler.handlers[hand].pattern) != <span class="number">-1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                handler = special_handler.handlers[hand].action</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/* Write the response data while receive */</span></span><br><span class="line">        response.on(<span class="string">'data'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">            handler(clientResponse, data);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="comment">/* Close the connection */</span></span><br><span class="line">        response.on(<span class="string">"end"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            clientResponse.end();</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Write the request data while receive */</span></span><br><span class="line">    clientRequest.on(<span class="string">"data"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">chunk</span>) </span>&#123;</span><br><span class="line">        client.write(chunk, <span class="string">'binary'</span>);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Close the connection */</span></span><br><span class="line">    clientRequest.on(<span class="string">"end"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        client.end();</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> *  Create and run the server!</span><br><span class="line"> **/</span></span><br><span class="line"><span class="keyword">var</span> server = http.createServer(requestHandler);</span><br><span class="line">server.listen(<span class="number">8000</span>);</span><br><span class="line">sys.puts(<span class="string">"Server running at http://127.0.0.1:8000/"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line">*	handlers.js</span><br><span class="line">**/</span></span><br><span class="line"></span><br><span class="line">exports.handlers = [&#123;</span><br><span class="line">    pattern: <span class="string">'facebook'</span>,</span><br><span class="line"></span><br><span class="line">    action: <span class="function"><span class="keyword">function</span>(<span class="params">response</span>) </span>&#123;</span><br><span class="line">        response.writeHead(<span class="number">200</span>, &#123;</span><br><span class="line">            <span class="string">'Content-Type'</span>: <span class="string">'text/html'</span></span><br><span class="line">        &#125;);</span><br><span class="line">        response.end(<span class="string">"&lt;h1&gt;Ups, Sorry. &lt;br/&gt;&lt;br/&gt; I Like Facebook but I Block it... &lt;br/&gt;&lt;br/&gt; Please Contact the Administrator &lt;/h1&gt;"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+<p>As above scripts block facebook and show a message to manifest our workstation is built up .</p>
+<p>Finally, it’s time to use chrome to open a login web page of the website - <a href="https://login.m.taobao.com/login.htm" target="_blank" rel="external">https://login.m.taobao.com/login.htm</a>. Listen all the http &amp; https resquests and analyse &amp; verify the signature program.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/06/node-httpproxy/" data-id="cilgq75xv0004ro8axcui74k5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/02/hexo-solve-change-workstation/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">hexo换电脑麻烦解决</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/front-end/">front-end</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术工具/">技术工具</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/文章/">文章</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/碎碎念/">碎碎念</a><span class="tag-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/node-js/" style="font-size: 20px;">node.js</a> <a href="/tags/碎碎念/" style="font-size: 15px;">碎碎念</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/03/06/node-httpproxy/">node.js to implement httpproxy</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/02/hexo-solve-change-workstation/">hexo换电脑麻烦解决</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/01/delivery-hero/">别了，超人</a>
+          </li>
+        
+          <li>
+            <a href="/2016/03/01/git-command/">git操作命令</a>
+          </li>
+        
+          <li>
+            <a href="/2016/02/28/very-first/">首页语</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Zachary qin<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
