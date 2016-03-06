@@ -15,19 +15,16 @@
 <meta name="twitter:title" content="Zachary's blog">
 <meta name="twitter:description">
   
-    <link rel="alternate" href="/atom.xml" title="Zachary&#39;s blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Zachary&#39;s blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
   
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/style.css">
   
 
 </head>
-
 <body>
   <div id="container">
     <div id="wrap">
@@ -57,7 +54,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -95,7 +92,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>hexo部署blog到github确实很方便，下载相关插件，然后一条命令就搞定了。不明白？参考这篇<a href="http://dontcry2013.github.io/2016/02/26/hello-world/" target="_blank" rel="external">hexo配置</a>，神马？不知道怎么配置nodejs环境？那就参考<a href="http://jingyan.baidu.com/article/9113f81b01c4e72b3214c7d3.html" target="_blank" rel="external">这里</a>。</p>
-<p>如果只满足于简单的部署发布，现在就完全够用了。可是有人就喜欢在不同时间、不同地点、不同电脑上写文章( •̀ ω •́ )y！（嗯，那个人就是我～）。这样的问题如何解决呢，总体思路是使用github的分支思想，将所有文件放在hexo分支下，deploy文件放在master分支。同时因为有配置.gitignore文件，无需担心node_moduel等文件被手动发布到hexo分支下。follow下面几步让你赏心悦目、随心所欲写文章。</p>
+<p>如果只满足于简单的部署发布，现在就完全够用了。可是有人就喜欢在不同时间、不同地点、不同电脑上写文章( •̀ ω •́ )y！(嗯，那个人就是我～)。这样的问题如何解决呢，总体思路是使用github的分支思想，将所有文件放在hexo分支下，将public文件夹通过插件自动发布放在master分支以供加载展示。同时因为有配置.gitignore文件，无需担心node_modules等文件被手动发布到hexo分支下，达到文件分类存放的目的。follow下面几步让你赏心悦目、随心所欲写文章。</p>
 <h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p>1). 创建仓库，<a href="http://dontcry2013.github.io；" target="_blank" rel="external">http://dontcry2013.github.io；</a><br>2). 创建两个分支：master 与 hexo；<br>3). 设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）；<br>4). 使用git clone git@github.com:dontcry2013/dontcry2013.github.io.git拷贝仓库；<br>5). 在本地dontcry2013.github.io文件夹下依次执行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo</span><br><span class="line">$ hexo init</span><br><span class="line">$ npm install</span><br><span class="line">$ npm install hexo-deployer-git  <span class="comment">#此时当前分支应显示为hexo</span></span><br></pre></td></tr></table></figure>
 <p>6). 修改_config.yml中的deploy参数，分支应为master；<br>7). 依次执行</p>
@@ -112,7 +109,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/02/hexo-solve-change-workstation/" data-id="cilb0rq3i0005oy8ahpay6mmo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/02/hexo-solve-change-workstation/" data-id="cilgmzg5n00072e8arixj08jr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
@@ -159,7 +156,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/01/delivery-hero/" data-id="cilb0rq340000oy8ar8hfq6g5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/01/delivery-hero/" data-id="cilgmzg5900002e8avu8eaukq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/碎碎念/">碎碎念</a></li></ul>
@@ -216,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/01/git-command/" data-id="cilb0rq390001oy8aer245wv1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/01/git-command/" data-id="cilgmzg5e00012e8as7mvhlea" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -263,7 +260,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/28/very-first/" data-id="cilb0rq3j0007oy8a30dqt994" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/28/very-first/" data-id="cilgmzg5m00052e8ax0o2repa" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/碎碎念/">碎碎念</a></li></ul>
@@ -316,7 +313,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/26/hello-world/" data-id="cilb0rq3g0004oy8ai0012v13" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/26/hello-world/" data-id="cilgmzg5l00042e8a7mvrbvu2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
@@ -328,34 +325,32 @@
 
 
   
-
+  
 </section>
         
           <aside id="sidebar">
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
+    <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术工具/">技术工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/文章/">文章</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术工具/">技术工具</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/文章/">文章</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
-
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/碎碎念/">碎碎念</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/碎碎念/">碎碎念</a><span class="tag-list-count">2</span></li></ul>
     </div>
   </div>
-
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/碎碎念/" style="font-size: 10px;">碎碎念</a>
     </div>
@@ -364,17 +359,16 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
-
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
+    <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
         
