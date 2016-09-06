@@ -123,7 +123,7 @@ var _hmt = _hmt || [];
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/android/" style="font-size: 10px;">android</a> <a href="/tags/fiddler/" style="font-size: 10px;">fiddler</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/node-js/" style="font-size: 15px;">node.js</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/webview/" style="font-size: 10px;">webview</a> <a href="/tags/碎碎念/" style="font-size: 20px;">碎碎念</a> <a href="/tags/英语/" style="font-size: 10px;">英语</a>
+						<a href="/tags/android/" style="font-size: 16.67px;">android</a> <a href="/tags/c/" style="font-size: 16.67px;">c</a> <a href="/tags/closure/" style="font-size: 10px;">closure</a> <a href="/tags/command/" style="font-size: 13.33px;">command</a> <a href="/tags/fiddler/" style="font-size: 10px;">fiddler</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/hexo/" style="font-size: 13.33px;">hexo</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/java/" style="font-size: 13.33px;">java</a> <a href="/tags/jni/" style="font-size: 10px;">jni</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/ndk/" style="font-size: 10px;">ndk</a> <a href="/tags/node-js/" style="font-size: 13.33px;">node.js</a> <a href="/tags/oracle/" style="font-size: 13.33px;">oracle</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/webview/" style="font-size: 10px;">webview</a> <a href="/tags/碎碎念/" style="font-size: 20px;">碎碎念</a> <a href="/tags/英语/" style="font-size: 10px;">英语</a>
 					</div>
 				</section>
 				
@@ -197,11 +197,11 @@ var _hmt = _hmt || [];
 
       <div class="body-wrap">
   
-    <article id="post-hexo-config" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-ocr-android-bitmap" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/26/hexo-config/" class="article-date">
-  	<time datetime="2016-02-26T11:59:13.000Z" itemprop="datePublished">2016-02-26</time>
+      <a href="/2016/04/22/ocr-android-bitmap/" class="article-date">
+  	<time datetime="2016-04-22T04:51:58.000Z" itemprop="datePublished">2016-04-22</time>
 </a>
     </div>
   
@@ -214,7 +214,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/26/hexo-config/">Hexo Configuration</a>
+      <a class="article-title" href="/2016/04/22/ocr-android-bitmap/">图像识别之jni返回图片到java</a>
     </h1>
   
 
@@ -223,8 +223,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <p>在jni中操作图像并返回给java层有两种方式，第一种直接传递空图片到jni，在jni层锁定后操作像素再返回给java层，类似指针操作。第二种直接在jni层新建图片返回。<br>
       
     </div>
     
@@ -232,7 +231,519 @@ var _hmt = _hmt || [];
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jni/">jni</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/ocr/">ocr</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/22/ocr-android-bitmap/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-ocr-collumn-statistic" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/19/ocr-collumn-statistic/" class="article-date">
+  	<time datetime="2016-04-19T05:16:18.000Z" itemprop="datePublished">2016-04-19</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/19/ocr-collumn-statistic/">图像识别之像素列统计</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>prerequisite：经过二值化，每个像素点只有0（黑色）和255（白色）两个值。<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/">c</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/ocr/">ocr</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/19/ocr-collumn-statistic/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-MongoDB-commands" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/13/MongoDB-commands/" class="article-date">
+  	<time datetime="2016-04-12T23:51:09.000Z" itemprop="datePublished">2016-04-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/13/MongoDB-commands/">MongoDB-commands</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一些常用的mongo命令<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/command/">command</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongodb/">mongodb</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/db/">db</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/13/MongoDB-commands/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Linux-commands" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/12/Linux-commands/" class="article-date">
+  	<time datetime="2016-04-11T23:47:11.000Z" itemprop="datePublished">2016-04-12</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/12/Linux-commands/">Linux-commands</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一些常用的Linux命令<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/command/">command</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/linux/">linux</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/12/Linux-commands/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-java-baisc-object" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/07/java-baisc-object/" class="article-date">
+  	<time datetime="2016-04-07T00:31:06.000Z" itemprop="datePublished">2016-04-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/07/java-baisc-object/">java集合类型</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Java 集合可分为 Set、List 和 Map 三种体系：<br>Set：无序、不可重复的集合。<br>List：有序，可重复的集合。<br>Map：具有映射关系的集合。<br>Collection 接口是 List、Set 和 Queue 接口的父接口，Set 判断两个对象是否相同不是使用 == 运算符，而是根据 equals 方法。<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/basic/">basic</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/07/java-baisc-object/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-android-studio-ndk-setup" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/01/android-studio-ndk-setup/" class="article-date">
+  	<time datetime="2016-04-01T07:56:39.000Z" itemprop="datePublished">2016-04-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/01/android-studio-ndk-setup/">android studio ndk development setup</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近在做的文字识别采用了卷积神经网络技术，这种方式需要大量使用循环计算，无疑c++是高效处理这种密集运算的语言。在测试识别mnist样本库10K个测试图片时，识别率正确率达到了92%以上。实际使用中，在识别手写和印刷体字符时还是存在一些很复杂的问题，比如字体粗细、偏移极大影响识别正确率，实际上卷积神经网络的特征提取是位置不相关的，这也是以后要着重优化的地方。回到主题，c++工程要通过ndk编译成so库才能在Android端使用，以前主要使用eclipse开发，现在Android studio成为了行业主流，在配置使用过程中碰到了很多的坑，用了一天的时间才使项目正常运行。<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ndk/">ndk</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/android/">android</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/01/android-studio-ndk-setup/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-A-Tale-of-Two-Cities" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/20/A-Tale-of-Two-Cities/" class="article-date">
+  	<time datetime="2016-03-20T08:25:12.000Z" itemprop="datePublished">2016-03-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/20/A-Tale-of-Two-Cities/">A Tale of Two Cities</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>“It was the best of times, and it was the worst of times. It was the age of wisdom, and it was the age of foolishness. It was the epoch of belief, and it was the epoch of incredulity. It was the season of light, and it was the season of darkness. It was the spring of hope, and it was the winter of despair.
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/碎碎念/">碎碎念</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/英语/">英语</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/article/">article</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/20/A-Tale-of-Two-Cities/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-20-Mar-2016" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/20/20-Mar-2016/" class="article-date">
+  	<time datetime="2016-03-20T06:12:23.000Z" itemprop="datePublished">2016-03-20</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/20/20-Mar-2016/">20 Mar 2016</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一年多没有感冒过了，这次流感来得快去得也快，周五感冒周六睡一天，周日又可以活动自如了，年轻就是好。<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/碎碎念/">碎碎念</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/article/">article</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/20/20-Mar-2016/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-fiddler-tips" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/15/fiddler-tips/" class="article-date">
+  	<time datetime="2016-03-15T03:57:37.000Z" itemprop="datePublished">2016-03-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/15/fiddler-tips/">Fiddler tips</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Fiddler is coded by C# and it’s a free http proxy debugging tool. It has two version which are .net 2 and .net 4. Fiddler can record all the messages that transmitted between your computer and internet. Basicly, it’s really easy to use, but it doesn’t means it’s simple designed but, on the contrary, it can set breakpoints, run script before/after a http request to tunning and examin the data which is really powerful.<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fiddler/">fiddler</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/proxy/">proxy</a></li></ul>
 	</div>
 
       
@@ -243,7 +754,71 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a  href="/2016/02/26/hexo-config/#more">more >></a>
+          <a  href="/2016/03/15/fiddler-tips/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-business-model-idea" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/13/business-model-idea/" class="article-date">
+  	<time datetime="2016-03-13T11:26:32.000Z" itemprop="datePublished">2016-03-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/13/business-model-idea/">关于新型职业服务的思考</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="/img/51baishi.png" alt="51拜师网"><br>本地生活服务平台可谓寡头当道，但在细分领域仍大有文章可做，一些是巨头们顾及不到的，一些是难以做精做好的。其中，教育就是一块蓝海，有待于发掘开拓。<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/碎碎念/">碎碎念</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/article/">article</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/13/business-model-idea/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -264,7 +839,7 @@ var _hmt = _hmt || [];
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </div>
