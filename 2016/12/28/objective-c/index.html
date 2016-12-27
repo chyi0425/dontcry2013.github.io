@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Self-Executing Anonymous Functions | Zachary&#39;s blog</title>
+  <title>NSNumber&amp;NSDictionary | Zachary&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="自执行函数写法很诡异，mark一下，需要学习。">
+  <meta name="description" content="NSNumber and NSDictionary are the basic class and most useful class in objective c.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Self-Executing Anonymous Functions">
-<meta property="og:url" content="http://yoursite.com/2016/11/28/Self-Executing-Anonymous-Functions/index.html">
+<meta property="og:title" content="NSNumber&NSDictionary">
+<meta property="og:url" content="http://yoursite.com/2016/12/28/objective-c/index.html">
 <meta property="og:site_name" content="Zachary's blog">
-<meta property="og:description" content="自执行函数写法很诡异，mark一下，需要学习。">
-<meta property="og:updated_time" content="2016-11-28T06:53:15.000Z">
+<meta property="og:description" content="NSNumber and NSDictionary are the basic class and most useful class in objective c.">
+<meta property="og:updated_time" content="2016-12-27T13:25:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Self-Executing Anonymous Functions">
-<meta name="twitter:description" content="自执行函数写法很诡异，mark一下，需要学习。">
+<meta name="twitter:title" content="NSNumber&NSDictionary">
+<meta name="twitter:description" content="NSNumber and NSDictionary are the basic class and most useful class in objective c.">
   
     <link rel="alternative" href="/atom.xml" title="Zachary&#39;s blog" type="application/atom+xml">
   
@@ -196,11 +196,11 @@ var _hmt = _hmt || [];
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-Self-Executing-Anonymous-Functions" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-objective-c" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/11/28/Self-Executing-Anonymous-Functions/" class="article-date">
-  	<time datetime="2016-11-28T06:10:12.000Z" itemprop="datePublished">2016-11-28</time>
+      <a href="/2016/12/28/objective-c/" class="article-date">
+  	<time datetime="2016-12-27T13:12:43.000Z" itemprop="datePublished">2016-12-28</time>
 </a>
     </div>
   
@@ -213,7 +213,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      Self-Executing Anonymous Functions
+      NSNumber&amp;NSDictionary
     </h1>
   
 
@@ -222,12 +222,12 @@ var _hmt = _hmt || [];
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TODO/">TODO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objective-c/">objective-c</a></li></ul>
 	</div>
 
         
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/javascript/">javascript</a>
+	<a class="article-category-link" href="/categories/iOS/">iOS</a>
 	</div>
 
 
@@ -237,10 +237,9 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>自执行函数写法很诡异，mark一下，需要学习。<br><a id="more"></a></p>
-<h1 id="jquery-的自执行函数"><a href="#jquery-的自执行函数" class="headerlink" title="jquery 的自执行函数"></a>jquery 的自执行函数</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>) </span>&#123;</span><br><span class="line"><span class="meta">  'use strict'</span>;</span><br><span class="line"></span><br><span class="line">  $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> $fullText = $(<span class="string">'.admin-fullText'</span>);</span><br><span class="line">    $(<span class="string">'#admin-fullscreen'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      $.AMUI.fullscreen.toggle();</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    $(<span class="built_in">document</span>).on($.AMUI.fullscreen.raw.fullscreenchange, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      $.AMUI.fullscreen.isFullscreen ? $fullText.text(<span class="string">'关闭全屏'</span>) : $fullText.text(<span class="string">'开启全屏'</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;)(jQuery);</span><br></pre></td></tr></table></figure>
-<p><a href="http://stackoverflow.com/questions/19491650/self-executing-function-jquery-vs-javascript-difference" target="_blank" rel="external">self executing function jquery vs javascript difference</a></p>
-
+        <p>NSNumber and NSDictionary are the basic class and most useful class in objective c.<br><a id="more"></a></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实时获取下载进度百分比</span></span><br><span class="line">- (<span class="keyword">void</span>) dataDownloadAtPercent:(PvUrlSessionDownload*)downloader withVid:(NSString *)vid percent: (NSNumber *) aPercent&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//  [[FMDBHelper sharedInstance] updateDownloadPercent:vid percent:aPercent];</span></span><br><span class="line">    <span class="keyword">if</span>(nil == <span class="built_in">map</span>)&#123;</span><br><span class="line">        <span class="built_in">map</span> = [NSMutableDictionary dictionaryWithCapacity:<span class="number">10</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> y = [aPercent intValue];</span><br><span class="line">        <span class="keyword">if</span>(nil == [<span class="built_in">map</span> objectForKey:vid])&#123;</span><br><span class="line">           [<span class="built_in">map</span> setObject:[[NSNumber alloc] initWithInt:y] forKey:vid];</span><br><span class="line">        &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>([[<span class="built_in">map</span> objectForKey:vid] isKindOfClass:[NSNumber <span class="keyword">class</span>]])&#123;</span><br><span class="line">                x = [[<span class="built_in">map</span> objectForKey:vid] intValue];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        RCTLogInfo(@<span class="string">"来自Xcode的信息－下载了:%@|%d|%d"</span>,aPercent,y,x);</span><br><span class="line">        <span class="keyword">if</span>(x!=y)&#123;</span><br><span class="line">            [<span class="built_in">map</span> setObject:[[NSNumber alloc] initWithInt:y] forKey:vid];</span><br><span class="line">            [self.bridge.eventDispatcher sendAppEventWithName:@<span class="string">"DownloadEvent"</span></span><br><span class="line">                                                         body:@&#123;@<span class="string">"what"</span>: @<span class="number">4</span>,</span><br><span class="line">                                                                @<span class="string">"status"</span>: [NSNumber numberWithInt:y],</span><br><span class="line">                                                                @<span class="string">"name"</span>: @<span class="string">"downloadAtPercent"</span>,</span><br><span class="line">                                                                @<span class="string">"vid"</span>:vid&#125;];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//基本数据类型</span></span><br><span class="line"><span class="comment">//专门用来装基础类型的对象</span></span><br><span class="line">NSNumber * intNumber = [[NSNumber alloc] initWithInt:<span class="number">5</span>];</span><br><span class="line">NSNumber * floatNumber = [[NSNumber alloc] initWithFloat:<span class="number">3.14f</span>];</span><br><span class="line">NSNumber * doubleNumber = [[NSNumber alloc] initWithDouble:<span class="number">6.7</span>];</span><br><span class="line">NSNumber * charNumber = [[NSNumber alloc] initWithChar:<span class="string">'A'</span>];</span><br><span class="line"><span class="comment">//这种比较也是可以跨不同对象的，比如：比较intNumber和floatNumber</span></span><br><span class="line">BOOL ret = [intNumber isEqualToNumber:intNumber2]; </span><br><span class="line"><span class="comment">//比较两个整型的NSNumber的大小</span></span><br><span class="line"><span class="keyword">if</span> ([intNumber compare:intNumber] == NSOrderedAscending) &#123;</span><br><span class="line">    NSLog(@<span class="string">"&lt;"</span>);</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>([intNumber compare:intNumber2] == NSOrderedSame)&#123;</span><br><span class="line">    NSLog(@<span class="string">"="</span>);</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>([intNumber compare:intNumber2] == NSOrderedDescending)&#123;</span><br><span class="line">    NSLog(@<span class="string">"&gt;"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//通过以下方法可以还原这些基本数据类型的数据</span></span><br><span class="line">NSLog(@<span class="string">"%d"</span>, [intNumber intValue]);</span><br><span class="line">NSLog(@<span class="string">"%f"</span>, [floatNumber floatValue]);</span><br><span class="line">NSLog(@<span class="string">"%f"</span>, [doubleNumber doubleValue]);</span><br><span class="line">NSLog(@<span class="string">"%c"</span>, [charNumber charValue]);</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -249,18 +248,9 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/2016/11/28/jsonp-tricky-trap/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          jsonp tricky trap
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/11/24/promise_and_async/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">promise and async</div>
+    <a href="/2016/11/28/jsonp-tricky-trap/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">jsonp tricky trap</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -295,7 +285,7 @@ var _hmt = _hmt || [];
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Self-Executing-Anonymous-Functions" data-title="Self-Executing Anonymous Functions" data-url="http://yoursite.com/2016/11/28/Self-Executing-Anonymous-Functions/"></div>
+	<div class="ds-thread" data-thread-key="objective-c" data-title="NSNumber&amp;NSDictionary" data-url="http://yoursite.com/2016/12/28/objective-c/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
