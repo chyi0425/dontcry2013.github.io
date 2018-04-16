@@ -195,70 +195,6 @@ var _hmt = _hmt || [];
 
       <div class="body-wrap">
   
-    <article id="post-closure" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/07/07/closure/" class="article-date">
-  	<time datetime="2016-07-07T00:06:07.000Z" itemprop="datePublished">2016-07-07</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/07/closure/">js闭包</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、变量的作用域"><a href="#一、变量的作用域" class="headerlink" title="一、变量的作用域"></a>一、变量的作用域</h1><p>函数内部声明变量的时候，一定要使用var命令。如果不用的话，你实际上声明了一个全局变量！<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">　<span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　　　n=<span class="number">999</span>;</span><br><span class="line">　　&#125;</span><br><span class="line">　　f1();</span><br><span class="line">　　alert(n); <span class="comment">// 999</span></span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/closure/">closure</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/js/">js</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/07/07/closure/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-path" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -508,70 +444,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-pointer" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/29/pointer/" class="article-date">
-  	<time datetime="2016-04-29T08:34:12.000Z" itemprop="datePublished">2016-04-29</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/29/pointer/">函数指针和指针函数</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Unix C语言环境下的多线程编程使用到函数指针来传递需要执行的函数体到线程，使用的方式就是通过函数指针来指向需要执行的代码。<br>函数原型：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int pthread_create(pthread_t *thread, pthread_attr_t *attr, void *(*func)(void*), void *arg);</span><br></pre></td></tr></table></figure></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/">c</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/basic/">basic</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/29/pointer/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-php" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -622,6 +494,70 @@ var _hmt = _hmt || [];
 	</div>
 
 
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-pointer" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/29/pointer/" class="article-date">
+  	<time datetime="2016-04-29T08:34:12.000Z" itemprop="datePublished">2016-04-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/29/pointer/">函数指针和指针函数</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Unix C语言环境下的多线程编程使用到函数指针来传递需要执行的函数体到线程，使用的方式就是通过函数指针来指向需要执行的代码。<br>函数原型：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int pthread_create(pthread_t *thread, pthread_attr_t *attr, void *(*func)(void*), void *arg);</span><br></pre></td></tr></table></figure></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/c/">c</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/basic/">basic</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/29/pointer/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -813,6 +749,70 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a  href="/2016/04/19/ocr-collumn-statistic/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-MongoDB-commands" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/13/MongoDB-commands/" class="article-date">
+  	<time datetime="2016-04-12T23:51:09.000Z" itemprop="datePublished">2016-04-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/13/MongoDB-commands/">MongoDB-commands</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一些常用的mongo命令<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/command/">command</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongodb/">mongodb</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/db/">db</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/13/MongoDB-commands/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

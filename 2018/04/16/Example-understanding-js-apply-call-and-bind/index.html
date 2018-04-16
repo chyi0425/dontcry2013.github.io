@@ -4,20 +4,20 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>NSNumber&amp;NSDictionary | Zachary&#39;s blog</title>
+  <title>Example understanding js apply, call and bind | Zachary&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="NSNumber and NSDictionary are the basic class and most useful class in objective c.">
-<meta name="keywords" content="objective-c">
+  <meta name="description" content="apply, call and bindThey are the embeded mothod of a function. The following examples show usage to bind this object to a callback function to replacet the global this.">
+<meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NSNumber&amp;NSDictionary">
-<meta property="og:url" content="http://yoursite.com/2016/12/28/objective-c/index.html">
+<meta property="og:title" content="Example understanding js apply, call and bind">
+<meta property="og:url" content="http://yoursite.com/2018/04/16/Example-understanding-js-apply-call-and-bind/index.html">
 <meta property="og:site_name" content="Zachary&#39;s blog">
-<meta property="og:description" content="NSNumber and NSDictionary are the basic class and most useful class in objective c.">
+<meta property="og:description" content="apply, call and bindThey are the embeded mothod of a function. The following examples show usage to bind this object to a callback function to replacet the global this.">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2016-12-27T13:25:38.000Z">
+<meta property="og:updated_time" content="2018-04-16T01:21:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NSNumber&amp;NSDictionary">
-<meta name="twitter:description" content="NSNumber and NSDictionary are the basic class and most useful class in objective c.">
+<meta name="twitter:title" content="Example understanding js apply, call and bind">
+<meta name="twitter:description" content="apply, call and bindThey are the embeded mothod of a function. The following examples show usage to bind this object to a callback function to replacet the global this.">
   
     <link rel="alternative" href="/atom.xml" title="Zachary&#39;s blog" type="application/atom+xml">
   
@@ -198,11 +198,11 @@ var _hmt = _hmt || [];
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-objective-c" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Example-understanding-js-apply-call-and-bind" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/12/28/objective-c/" class="article-date">
-  	<time datetime="2016-12-27T13:12:43.000Z" itemprop="datePublished">2016-12-28</time>
+      <a href="/2018/04/16/Example-understanding-js-apply-call-and-bind/" class="article-date">
+  	<time datetime="2018-04-15T23:57:24.000Z" itemprop="datePublished">2018-04-16</time>
 </a>
     </div>
   
@@ -215,7 +215,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      NSNumber&amp;NSDictionary
+      Example understanding js apply, call and bind
     </h1>
   
 
@@ -224,12 +224,12 @@ var _hmt = _hmt || [];
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objective-c/">objective-c</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 	</div>
 
         
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/iOS/">iOS</a>
+	<a class="article-category-link" href="/categories/javascript/">javascript</a>
 	</div>
 
 
@@ -239,9 +239,10 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>NSNumber and NSDictionary are the basic class and most useful class in objective c.<br><a id="more"></a></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//实时获取下载进度百分比</span></span><br><span class="line">- (<span class="keyword">void</span>) dataDownloadAtPercent:(PvUrlSessionDownload*)downloader withVid:(NSString *)vid percent: (NSNumber *) aPercent&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//  [[FMDBHelper sharedInstance] updateDownloadPercent:vid percent:aPercent];</span></span><br><span class="line">    <span class="keyword">if</span>(nil == <span class="built_in">map</span>)&#123;</span><br><span class="line">        <span class="built_in">map</span> = [NSMutableDictionary dictionaryWithCapacity:<span class="number">10</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    dispatch_async(dispatch_get_main_queue(), ^&#123;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> y = [aPercent intValue];</span><br><span class="line">        <span class="keyword">if</span>(nil == [<span class="built_in">map</span> objectForKey:vid])&#123;</span><br><span class="line">           [<span class="built_in">map</span> setObject:[[NSNumber alloc] initWithInt:y] forKey:vid];</span><br><span class="line">        &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>([[<span class="built_in">map</span> objectForKey:vid] isKindOfClass:[NSNumber class]])&#123;</span><br><span class="line">                x = [[<span class="built_in">map</span> objectForKey:vid] intValue];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        RCTLogInfo(@<span class="string">"来自Xcode的信息－下载了:%@|%d|%d"</span>,aPercent,y,x);</span><br><span class="line">        <span class="keyword">if</span>(x!=y)&#123;</span><br><span class="line">            [<span class="built_in">map</span> setObject:[[NSNumber alloc] initWithInt:y] forKey:vid];</span><br><span class="line">            [self.bridge.eventDispatcher sendAppEventWithName:@<span class="string">"DownloadEvent"</span></span><br><span class="line">                                                         body:@&#123;@<span class="string">"what"</span>: @<span class="number">4</span>,</span><br><span class="line">                                                                @<span class="string">"status"</span>: [NSNumber numberWithInt:y],</span><br><span class="line">                                                                @<span class="string">"name"</span>: @<span class="string">"downloadAtPercent"</span>,</span><br><span class="line">                                                                @<span class="string">"vid"</span>:vid&#125;];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//基本数据类型</span></span><br><span class="line"><span class="comment">//专门用来装基础类型的对象</span></span><br><span class="line">NSNumber * intNumber = [[NSNumber alloc] initWithInt:<span class="number">5</span>];</span><br><span class="line">NSNumber * floatNumber = [[NSNumber alloc] initWithFloat:<span class="number">3.14f</span>];</span><br><span class="line">NSNumber * doubleNumber = [[NSNumber alloc] initWithDouble:<span class="number">6.7</span>];</span><br><span class="line">NSNumber * charNumber = [[NSNumber alloc] initWithChar:<span class="string">'A'</span>];</span><br><span class="line"><span class="comment">//这种比较也是可以跨不同对象的，比如：比较intNumber和floatNumber</span></span><br><span class="line">BOOL ret = [intNumber isEqualToNumber:intNumber2]; </span><br><span class="line"><span class="comment">//比较两个整型的NSNumber的大小</span></span><br><span class="line"><span class="keyword">if</span> ([intNumber compare:intNumber] == NSOrderedAscending) &#123;</span><br><span class="line">    NSLog(@<span class="string">"&lt;"</span>);</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>([intNumber compare:intNumber2] == NSOrderedSame)&#123;</span><br><span class="line">    NSLog(@<span class="string">"="</span>);</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>([intNumber compare:intNumber2] == NSOrderedDescending)&#123;</span><br><span class="line">    NSLog(@<span class="string">"&gt;"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//通过以下方法可以还原这些基本数据类型的数据</span></span><br><span class="line">NSLog(@<span class="string">"%d"</span>, [intNumber intValue]);</span><br><span class="line">NSLog(@<span class="string">"%f"</span>, [floatNumber floatValue]);</span><br><span class="line">NSLog(@<span class="string">"%f"</span>, [doubleNumber doubleValue]);</span><br><span class="line">NSLog(@<span class="string">"%c"</span>, [charNumber charValue]);</span><br></pre></td></tr></table></figure>
+        <h1 id="apply-call-and-bind"><a href="#apply-call-and-bind" class="headerlink" title="apply, call and bind"></a>apply, call and bind</h1><p>They are the embeded mothod of a function. The following examples show usage to bind this object to a callback function to replacet the global this. </p>
+<a id="more"></a>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> op = &#123;<span class="attr">a</span>: <span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  	<span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</span><br><span class="line">&#125;)()  <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</span><br><span class="line">&#125;()) <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>.a)</span><br><span class="line">&#125;.apply(op))</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  	<span class="built_in">console</span>.log(<span class="keyword">this</span>.a)</span><br><span class="line">&#125;).call(op)</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  	<span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</span><br><span class="line">&#125;).bind(op)()  <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.a);</span><br><span class="line">&#125;.bind(op)()) <span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">arg1, arg2</span>)</span>&#123;</span><br><span class="line">  	<span class="built_in">console</span>.log(<span class="keyword">this</span>, arg1, arg2)</span><br><span class="line">&#125;).call(op, <span class="string">"ss"</span>, <span class="string">"sss"</span>)</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">arg1, arg2</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>, arg1, arg2)</span><br><span class="line">&#125;).apply(op, [<span class="string">"ss"</span>, <span class="string">"sss"</span>])</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params">arg</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(op, arg)</span><br><span class="line">&#125;.call(op, <span class="string">"ss"</span>), <span class="number">19</span>, <span class="string">"sss"</span>)  <span class="comment">// &#123;a: 1&#125; "ss"</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -250,18 +251,9 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/2017/02/21/js_property/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          The difference between __proto__ and prototype
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/11/28/jsonp-tricky-trap/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">jsonp tricky trap</div>
+    <a href="/2017/06/23/tips-of-js-and-css/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">tips of js, css and html</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -296,7 +288,7 @@ var _hmt = _hmt || [];
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="objective-c" data-title="NSNumber&amp;NSDictionary" data-url="http://yoursite.com/2016/12/28/objective-c/"></div>
+	<div class="ds-thread" data-thread-key="Example-understanding-js-apply-call-and-bind" data-title="Example understanding js apply, call and bind" data-url="http://yoursite.com/2018/04/16/Example-understanding-js-apply-call-and-bind/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

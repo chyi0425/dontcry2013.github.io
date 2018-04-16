@@ -195,64 +195,10 @@ var _hmt = _hmt || [];
 
       <div class="body-wrap">
   
-    <article id="post-mengmeng" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Example-understanding-js-apply-call-and-bind" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/04/16/mengmeng/" class="article-date">
-  	<time datetime="2018-04-16T00:28:37.000Z" itemprop="datePublished">2018-04-16</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/16/mengmeng/">mengmeng</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="apply-call-and-bind"><a href="#apply-call-and-bind" class="headerlink" title="apply, call and bind"></a>apply, call and bind</h1><p>They the prototype of a function object  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">``` js</span><br><span class="line">var op = &#123;a: 1&#125;;</span><br><span class="line">var a = 2;</span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">  	console.log(this.a);</span><br><span class="line">&#125;)()  // 2</span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">    console.log(this.a);</span><br><span class="line">&#125;()) // 2</span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">	console.log(this.a)</span><br><span class="line">&#125;.apply(op))</span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">  	console.log(this.a)</span><br><span class="line">&#125;).call(op)</span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">  	console.log(this.a);</span><br><span class="line">&#125;).bind(op)()  // 1</span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">    console.log(this.a);</span><br><span class="line">&#125;.bind(op)()) // 1</span><br><span class="line"></span><br><span class="line">(function(arg1, arg2)&#123;</span><br><span class="line">  	console.log(this, arg1, arg2)</span><br><span class="line">&#125;).call(op, &quot;ss&quot;, &quot;sss&quot;)</span><br><span class="line"></span><br><span class="line">(function(arg1, arg2)&#123;</span><br><span class="line">	console.log(this, arg1, arg2)</span><br><span class="line">&#125;).apply(op, [&quot;ss&quot;, &quot;sss&quot;])</span><br><span class="line"></span><br><span class="line">setTimeout(function(arg)&#123;</span><br><span class="line">	console.log(op, arg)</span><br><span class="line">&#125;.call(op, &quot;ss&quot;), 19, &quot;sss&quot;)  // &#123;a: 1&#125; &quot;ss&quot;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-recently-upgoing" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/04/16/recently-upgoing/" class="article-date">
+      <a href="/2018/04/16/Example-understanding-js-apply-call-and-bind/" class="article-date">
   	<time datetime="2018-04-15T23:57:24.000Z" itemprop="datePublished">2018-04-16</time>
 </a>
     </div>
@@ -266,7 +212,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/16/recently-upgoing/">Example understanding js apply, call and bind</a>
+      <a class="article-title" href="/2018/04/16/Example-understanding-js-apply-call-and-bind/">Example understanding js apply, call and bind</a>
     </h1>
   
 
@@ -275,9 +221,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="apply-call-and-bind"><a href="#apply-call-and-bind" class="headerlink" title="apply, call and bind"></a>apply, call and bind</h1><p>They the prototype of a function object  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">``` js</span><br><span class="line">var op = &#123;a: 1&#125;;</span><br><span class="line">var a = 2;</span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">  	console.log(this.a);</span><br><span class="line">&#125;)()  // 2</span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">    console.log(this.a);</span><br><span class="line">&#125;()) // 2</span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">	console.log(this.a)</span><br><span class="line">&#125;.apply(op))</span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">  	console.log(this.a)</span><br><span class="line">&#125;).call(op)</span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">  	console.log(this.a);</span><br><span class="line">&#125;).bind(op)()  // 1</span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">    console.log(this.a);</span><br><span class="line">&#125;.bind(op)()) // 1</span><br><span class="line"></span><br><span class="line">(function(arg1, arg2)&#123;</span><br><span class="line">  	console.log(this, arg1, arg2)</span><br><span class="line">&#125;).call(op, &quot;ss&quot;, &quot;sss&quot;)</span><br><span class="line"></span><br><span class="line">(function(arg1, arg2)&#123;</span><br><span class="line">	console.log(this, arg1, arg2)</span><br><span class="line">&#125;).apply(op, [&quot;ss&quot;, &quot;sss&quot;])</span><br><span class="line"></span><br><span class="line">setTimeout(function(arg)&#123;</span><br><span class="line">	console.log(op, arg)</span><br><span class="line">&#125;.call(op, &quot;ss&quot;), 19, &quot;sss&quot;)  // &#123;a: 1&#125; &quot;ss&quot;</span><br></pre></td></tr></table></figure>
-
+        <h1 id="apply-call-and-bind"><a href="#apply-call-and-bind" class="headerlink" title="apply, call and bind"></a>apply, call and bind</h1><p>They are the embeded mothod of a function. The following examples show usage to bind this object to a callback function to replacet the global this. </p>
       
     </div>
     
@@ -294,6 +238,10 @@ var _hmt = _hmt || [];
 	</div>
 
 
+      
+        <p class="article-more-link">
+          <a  href="/2018/04/16/Example-understanding-js-apply-call-and-bind/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -439,70 +387,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-js_tips" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2017/05/04/js_tips/" class="article-date">
-  	<time datetime="2017-05-04T00:03:37.000Z" itemprop="datePublished">2017-05-04</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/04/js_tips/">js tips and tricks</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>little tips and tricks in javascript, but often to use</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/javascript/">javascript</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2017/05/04/js_tips/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-js_clone" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -549,6 +433,70 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a  href="/2017/05/04/js_clone/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-js_tips" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/05/04/js_tips/" class="article-date">
+  	<time datetime="2017-05-04T00:03:37.000Z" itemprop="datePublished">2017-05-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/04/js_tips/">js tips and tricks</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>little tips and tricks in javascript, but often to use</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/javascript/">javascript</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2017/05/04/js_tips/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -743,6 +691,70 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a  href="/2016/12/28/objective-c/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-jsonp-tricky-trap" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/28/jsonp-tricky-trap/" class="article-date">
+  	<time datetime="2016-11-28T06:10:12.000Z" itemprop="datePublished">2016-11-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/28/jsonp-tricky-trap/">jsonp tricky trap</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在使用polyv的web上传插件时遇到语言问题，官方插件是中文没有切换英文的借口。想到保存到本地修改后使用。<br>幸好提供了jsonp借口，但是在调用上踩了一下坑。<br>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/issue/">issue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/javascript/">javascript</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/11/28/jsonp-tricky-trap/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
