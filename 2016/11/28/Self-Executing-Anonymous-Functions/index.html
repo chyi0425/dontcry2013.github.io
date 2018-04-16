@@ -7,11 +7,13 @@
   <title>Self-Executing Anonymous Functions | Zachary&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="自执行函数写法很诡异，mark一下，需要学习。">
+<meta name="keywords" content="javascript,TODO">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Self-Executing Anonymous Functions">
 <meta property="og:url" content="http://yoursite.com/2016/11/28/Self-Executing-Anonymous-Functions/index.html">
-<meta property="og:site_name" content="Zachary's blog">
+<meta property="og:site_name" content="Zachary&#39;s blog">
 <meta property="og:description" content="自执行函数写法很诡异，mark一下，需要学习。">
+<meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2016-11-28T06:53:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Self-Executing Anonymous Functions">
@@ -239,7 +241,7 @@ var _hmt = _hmt || [];
       
         <p>自执行函数写法很诡异，mark一下，需要学习。<br><a id="more"></a></p>
 <h1 id="jquery-的自执行函数"><a href="#jquery-的自执行函数" class="headerlink" title="jquery 的自执行函数"></a>jquery 的自执行函数</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">$</span>) </span>&#123;</span><br><span class="line"><span class="meta">  'use strict'</span>;</span><br><span class="line"></span><br><span class="line">  $(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> $fullText = $(<span class="string">'.admin-fullText'</span>);</span><br><span class="line">    $(<span class="string">'#admin-fullscreen'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      $.AMUI.fullscreen.toggle();</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    $(<span class="built_in">document</span>).on($.AMUI.fullscreen.raw.fullscreenchange, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      $.AMUI.fullscreen.isFullscreen ? $fullText.text(<span class="string">'关闭全屏'</span>) : $fullText.text(<span class="string">'开启全屏'</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;)(jQuery);</span><br></pre></td></tr></table></figure>
-<p><a href="http://stackoverflow.com/questions/19491650/self-executing-function-jquery-vs-javascript-difference" target="_blank" rel="external">self executing function jquery vs javascript difference</a></p>
+<p><a href="http://stackoverflow.com/questions/19491650/self-executing-function-jquery-vs-javascript-difference" target="_blank" rel="noopener">self executing function jquery vs javascript difference</a></p>
 
       
     </div>
@@ -249,18 +251,18 @@ var _hmt = _hmt || [];
     
 <nav id="article-nav">
   
-    <a href="/2016/11/28/jsonp-tricky-trap/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/12/28/objective-c/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          jsonp tricky trap
+          NSNumber&amp;NSDictionary
         
       </div>
     </a>
   
   
-    <a href="/2016/11/24/promise_and_async/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">promise and async</div>
+    <a href="/2016/11/28/jsonp-tricky-trap/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">jsonp tricky trap</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -320,7 +322,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Zachary
+    		&copy; 2018 Zachary
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

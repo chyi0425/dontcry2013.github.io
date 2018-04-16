@@ -10,8 +10,9 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="js-apply,call,bind">
 <meta property="og:url" content="http://yoursite.com/2016/09/06/js-apply-call-bind/index.html">
-<meta property="og:site_name" content="Zachary's blog">
+<meta property="og:site_name" content="Zachary&#39;s blog">
 <meta property="og:description" content="js 里函数调用有 4 种模式：方法调用、正常函数调用、构造器函数调用、apply/call 调用。同时，无论哪种函数调用除了你声明时定义的形参外，还会自动添加 2 个形参，分别是 this 和 arguments。arguments 不涉及到上述 3 个函数，所以这里只谈 this。this 的值，在上面 4 中调用模式下，分别会绑定不同的值。分别来说一说：方法调用：这个很好理解，函数是一个对象">
+<meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2017-05-16T06:26:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js-apply,call,bind">
@@ -252,7 +253,7 @@ var _hmt = _hmt || [];
 <p>然后你想执行这个函数，脑洞大开的你会这么写：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jam</span>(<span class="params"></span>) </span>&#123;&#125;();</span><br></pre></td></tr></table></figure></p>
 <p>但是这么写就报错了，其实这种写法也不算错，因为它确实是 js 支持的函数表达式，但是同时 js 又规定以 function 开头的语句被认为是函数语句，而函数语句后面是肯定不会带 () 的，所以才报错，于是聪明的人想出来，加上一对括号就可以了。于是就变成了这样：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">jam</span>(<span class="params"></span>) </span>&#123;&#125;());</span><br></pre></td></tr></table></figure></p>
 <p>这样就定义了一个函数同时也执行它，详情参见 ECMAScript 的 Expression Statement 章节。</p>
-<p>出处<a href="http://rangercyh.blog.51cto.com/1444712/1615809" target="_blank" rel="external">http://rangercyh.blog.51cto.com/1444712/1615809</a></p>
+<p>出处<a href="http://rangercyh.blog.51cto.com/1444712/1615809" target="_blank" rel="noopener">http://rangercyh.blog.51cto.com/1444712/1615809</a></p>
 <h1 id="一些应用"><a href="#一些应用" class="headerlink" title="一些应用"></a>一些应用</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// min/max number in an array</span></span><br><span class="line"><span class="keyword">var</span> numbers = [<span class="number">5</span>, <span class="number">6</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">7</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// using Math.min/Math.max apply</span></span><br><span class="line"><span class="keyword">var</span> max = <span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, numbers); </span><br><span class="line"><span class="comment">// This about equal to Math.max(numbers[0], ...)</span></span><br><span class="line"><span class="comment">// or Math.max(5, 6, ...)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> min = <span class="built_in">Math</span>.min.apply(<span class="literal">null</span>, numbers);</span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myConcat</span>(<span class="params">separator</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>);</span><br><span class="line">  <span class="keyword">return</span> args.join(separator);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// returns "red, orange, blue"</span></span><br><span class="line">myConcat(<span class="string">', '</span>, <span class="string">'red'</span>, <span class="string">'orange'</span>, <span class="string">'blue'</span>);</span><br></pre></td></tr></table></figure>
 
@@ -335,7 +336,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Zachary
+    		&copy; 2018 Zachary
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

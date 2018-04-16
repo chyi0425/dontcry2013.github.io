@@ -6,15 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>Zachary&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Zachary's blog">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Zachary&#39;s blog">
 <meta property="og:url" content="http://yoursite.com/page/3/index.html">
-<meta property="og:site_name" content="Zachary's blog">
-<meta property="og:description">
+<meta property="og:site_name" content="Zachary&#39;s blog">
+<meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Zachary's blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Zachary&#39;s blog">
   
     <link rel="alternative" href="/atom.xml" title="Zachary&#39;s blog" type="application/atom+xml">
   
@@ -196,6 +194,124 @@ var _hmt = _hmt || [];
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-closure" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/07/closure/" class="article-date">
+  	<time datetime="2016-07-07T00:06:07.000Z" itemprop="datePublished">2016-07-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/07/closure/">js闭包</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、变量的作用域"><a href="#一、变量的作用域" class="headerlink" title="一、变量的作用域"></a>一、变量的作用域</h1><p>函数内部声明变量的时候，一定要使用var命令。如果不用的话，你实际上声明了一个全局变量！<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">　<span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">　　　　n=<span class="number">999</span>;</span><br><span class="line">　　&#125;</span><br><span class="line">　　f1();</span><br><span class="line">　　alert(n); <span class="comment">// 999</span></span><br></pre></td></tr></table></figure></p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/closure/">closure</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/js/">js</a>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/07/07/closure/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-path" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/30/path/" class="article-date">
+  	<time datetime="2016-06-30T01:00:01.000Z" itemprop="datePublished">2016-06-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/30/path/">获取当前路径</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String dir = System.getProperty(<span class="string">"user.dir"</span>);</span><br><span class="line">System.out.println(dir);</span><br></pre></td></tr></table></figure>
+<p>得到的路径：<br>D:\workspace\courier.web</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-ip-check" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -485,10 +601,10 @@ var _hmt = _hmt || [];
         <p>开启Apache：sudo apachectl start<br>关闭Apache：sudo apachectl stop<br>重启Apache：sudo apachectl restart</p>
 <p>开启PHP<br>　　开启PHP，需要修改Apache配置文件，方法如下：</p>
 <p>打开终端，输入命令：sudo vim /etc/apache2/httpd.conf<br>找到#LoadModule php5_module libexec/apache2/libphp5.so，去掉注释（删除前面的井号）。<br>　　mac下Apache的默认文件夹为/Library/WebServer/Documents，在该目录下创建一个名为index.php文件，在文件中添加如下内容：&lt;?php phpinfo(); ?&gt;。删除原目录下的index.html文件，然后在浏览器中输入localhost，如果出现如下PHP的info页，则表示PHP开启成功，如果不成功，用前面的命令重启Apache再试。</p>
-<p>文／zagger（简书作者）<br>原文链接：<a href="http://www.jianshu.com/p/2fb9a3bb12f6" target="_blank" rel="external">http://www.jianshu.com/p/2fb9a3bb12f6</a><br>著作权归作者所有，转载请联系作者获得授权，并标注“简书作者”。</p>
+<p>文／zagger（简书作者）<br>原文链接：<a href="http://www.jianshu.com/p/2fb9a3bb12f6" target="_blank" rel="noopener">http://www.jianshu.com/p/2fb9a3bb12f6</a><br>著作权归作者所有，转载请联系作者获得授权，并标注“简书作者”。</p>
 <p>修改Apache目录<br>　　上面说到了mac下Apache的默认文件夹为/Library/WebServer/Documents，该目录默认是隐藏的，操作不是很方便，我们可以将其修改成自定义的目录。</p>
 <p>打开终端，输入命令：sudo vim /etc/apache2/httpd.conf<br>找到如下两处<br>　　DocumentRoot “/Library/WebServer/Documents”<br>　　<directory "="" library="" webserver="" documents"=""><br>将两处中引号中的目录替换为自定义的目录<br>　　完成以上三步后，重启Apache，将之前创建的index.php文件拷贝到自定义目录中，然后在浏览器中输入localhost，如果出现PHP的info页，则表示目录修改成功</directory></p>
-<p>文／zagger（简书作者）<br>原文链接：<a href="http://www.jianshu.com/p/2fb9a3bb12f6" target="_blank" rel="external">http://www.jianshu.com/p/2fb9a3bb12f6</a><br>著作权归作者所有，转载请联系作者获得授权，并标注“简书作者”。</p>
+<p>文／zagger（简书作者）<br>原文链接：<a href="http://www.jianshu.com/p/2fb9a3bb12f6" target="_blank" rel="noopener">http://www.jianshu.com/p/2fb9a3bb12f6</a><br>著作权归作者所有，转载请联系作者获得授权，并标注“简书作者”。</p>
 
       
     </div>
@@ -715,134 +831,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-MongoDB-commands" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/13/MongoDB-commands/" class="article-date">
-  	<time datetime="2016-04-12T23:51:09.000Z" itemprop="datePublished">2016-04-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/13/MongoDB-commands/">MongoDB-commands</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一些常用的mongo命令<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/command/">command</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongodb/">mongodb</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/db/">db</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/13/MongoDB-commands/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Linux-commands" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/12/Linux-commands/" class="article-date">
-  	<time datetime="2016-04-11T23:47:11.000Z" itemprop="datePublished">2016-04-12</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/12/Linux-commands/">Linux-commands</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>一些常用的Linux命令<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/command/">command</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/linux/">linux</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/12/Linux-commands/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -853,7 +841,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Zachary
+    		&copy; 2018 Zachary
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

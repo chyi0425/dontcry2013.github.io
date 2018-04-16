@@ -6,15 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>Zachary&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Zachary's blog">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Zachary&#39;s blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Zachary's blog">
-<meta property="og:description">
+<meta property="og:site_name" content="Zachary&#39;s blog">
+<meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Zachary's blog">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Zachary&#39;s blog">
   
     <link rel="alternative" href="/atom.xml" title="Zachary&#39;s blog" type="application/atom+xml">
   
@@ -196,6 +194,122 @@ var _hmt = _hmt || [];
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-mengmeng" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/04/16/mengmeng/" class="article-date">
+  	<time datetime="2018-04-16T00:28:37.000Z" itemprop="datePublished">2018-04-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/16/mengmeng/">mengmeng</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="apply-call-and-bind"><a href="#apply-call-and-bind" class="headerlink" title="apply, call and bind"></a>apply, call and bind</h1><p>They the prototype of a function object  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">``` js</span><br><span class="line">var op = &#123;a: 1&#125;;</span><br><span class="line">var a = 2;</span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">  	console.log(this.a);</span><br><span class="line">&#125;)()  // 2</span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">    console.log(this.a);</span><br><span class="line">&#125;()) // 2</span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">	console.log(this.a)</span><br><span class="line">&#125;.apply(op))</span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">  	console.log(this.a)</span><br><span class="line">&#125;).call(op)</span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">  	console.log(this.a);</span><br><span class="line">&#125;).bind(op)()  // 1</span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">    console.log(this.a);</span><br><span class="line">&#125;.bind(op)()) // 1</span><br><span class="line"></span><br><span class="line">(function(arg1, arg2)&#123;</span><br><span class="line">  	console.log(this, arg1, arg2)</span><br><span class="line">&#125;).call(op, &quot;ss&quot;, &quot;sss&quot;)</span><br><span class="line"></span><br><span class="line">(function(arg1, arg2)&#123;</span><br><span class="line">	console.log(this, arg1, arg2)</span><br><span class="line">&#125;).apply(op, [&quot;ss&quot;, &quot;sss&quot;])</span><br><span class="line"></span><br><span class="line">setTimeout(function(arg)&#123;</span><br><span class="line">	console.log(op, arg)</span><br><span class="line">&#125;.call(op, &quot;ss&quot;), 19, &quot;sss&quot;)  // &#123;a: 1&#125; &quot;ss&quot;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-recently-upgoing" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/04/16/recently-upgoing/" class="article-date">
+  	<time datetime="2018-04-15T23:57:24.000Z" itemprop="datePublished">2018-04-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/16/recently-upgoing/">Example understanding js apply, call and bind</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="apply-call-and-bind"><a href="#apply-call-and-bind" class="headerlink" title="apply, call and bind"></a>apply, call and bind</h1><p>They the prototype of a function object  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">``` js</span><br><span class="line">var op = &#123;a: 1&#125;;</span><br><span class="line">var a = 2;</span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">  	console.log(this.a);</span><br><span class="line">&#125;)()  // 2</span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">    console.log(this.a);</span><br><span class="line">&#125;()) // 2</span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">	console.log(this.a)</span><br><span class="line">&#125;.apply(op))</span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">  	console.log(this.a)</span><br><span class="line">&#125;).call(op)</span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">  	console.log(this.a);</span><br><span class="line">&#125;).bind(op)()  // 1</span><br><span class="line"></span><br><span class="line">(function()&#123;</span><br><span class="line">    console.log(this.a);</span><br><span class="line">&#125;.bind(op)()) // 1</span><br><span class="line"></span><br><span class="line">(function(arg1, arg2)&#123;</span><br><span class="line">  	console.log(this, arg1, arg2)</span><br><span class="line">&#125;).call(op, &quot;ss&quot;, &quot;sss&quot;)</span><br><span class="line"></span><br><span class="line">(function(arg1, arg2)&#123;</span><br><span class="line">	console.log(this, arg1, arg2)</span><br><span class="line">&#125;).apply(op, [&quot;ss&quot;, &quot;sss&quot;])</span><br><span class="line"></span><br><span class="line">setTimeout(function(arg)&#123;</span><br><span class="line">	console.log(op, arg)</span><br><span class="line">&#125;.call(op, &quot;ss&quot;), 19, &quot;sss&quot;)  // &#123;a: 1&#125; &quot;ss&quot;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/javascript/">javascript</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-tips-of-js-and-css" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -647,70 +761,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-jsonp-tricky-trap" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/28/jsonp-tricky-trap/" class="article-date">
-  	<time datetime="2016-11-28T06:10:12.000Z" itemprop="datePublished">2016-11-28</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/28/jsonp-tricky-trap/">jsonp tricky trap</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在使用polyv的web上传插件时遇到语言问题，官方插件是中文没有切换英文的借口。想到保存到本地修改后使用。<br>幸好提供了jsonp借口，但是在调用上踩了一下坑。<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/issue/">issue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/javascript/">javascript</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/11/28/jsonp-tricky-trap/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-Self-Executing-Anonymous-Functions" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -775,70 +825,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-promise_and_async" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/11/24/promise_and_async/" class="article-date">
-  	<time datetime="2016-11-24T04:20:02.000Z" itemprop="datePublished">2016-11-24</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/11/24/promise_and_async/">promise and async</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Promise对象的简单例子。"><a href="#Promise对象的简单例子。" class="headerlink" title="Promise对象的简单例子。"></a>Promise对象的简单例子。</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">timeout</span>(<span class="params">ms</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>((resolve, reject) =&gt; &#123;</span><br><span class="line">    setTimeout(resolve, ms, <span class="string">'done'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">timeout(<span class="number">100</span>).then((value) =&gt; &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(value);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/es6/">es6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/javascript/">javascript</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/11/24/promise_and_async/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -849,7 +835,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Zachary
+    		&copy; 2018 Zachary
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
